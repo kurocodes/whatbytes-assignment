@@ -22,8 +22,8 @@ export default function ProductCard({ product }: { product: Product }) {
 
 function NormalProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-white rounded-xl p-5 flex flex-col h-full shadow-sm border border-gray-100 col-span-1">
-      <div className="relative w-full aspect-4/3 mb-4 flex items-center justify-center p-2">
+    <div className="bg-white rounded-xl p-5 flex flex-col shadow-sm border border-gray-100 col-span-1">
+      <div className="relative w-full aspect-square mb-4 flex items-center justify-center">
         <div className="relative w-full h-full">
           <Image
             src={product.image}
@@ -34,14 +34,14 @@ function NormalProductCard({ product }: { product: Product }) {
           />
         </div>
       </div>
-      <div className="mt-auto flex flex-col">
+      <div className="flex flex-col grow mt-2">
         <h3 className="font-medium text-[16px] text-gray-900 leading-snug mb-1">
           {product.title}
         </h3>
         <p className="font-bold text-[16px] text-gray-900 mb-4">
           ${product.price}
         </p>
-        <button className="w-full bg-[#0856AA] text-[15px] text-white py-2.5 rounded-lg font-medium hover:bg-[#074b94] transition-colors active:scale-[0.98]">
+        <button className="mt-auto w-full bg-[#0856AA] text-[15px] text-white py-2.5 rounded-lg font-medium hover:bg-[#074b94] transition-colors active:scale-[0.98]">
           Add to Cart
         </button>
       </div>
@@ -55,9 +55,9 @@ function DetailedProductCard({ product }: { product: Product }) {
   const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0));
 
   return (
-    <div className="bg-white rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-8 shadow-sm border border-gray-100 h-full md:col-span-2">
-      <div className="relative w-full md:w-[45%] flex items-center justify-center p-4 shrink-0">
-        <div className="relative w-full h-full min-h-[250px] md:min-h-[350px]">
+    <div className="bg-white rounded-xl p-6 md:p-5 flex flex-col md:flex-row gap-8 shadow-sm border border-gray-100 md:col-span-2">
+      <div className="relative w-full md:w-[45%] flex items-center justify-center shrink-0">
+        <div className="relative w-full h-full min-h-[200px] md:min-h-[250px]">
           <Image
             src={product.image}
             alt={product.title}
@@ -69,13 +69,13 @@ function DetailedProductCard({ product }: { product: Product }) {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center grow py-2">
+      <div className="flex flex-col justify-center grow">
         <h3 className="font-bold text-[28px] tracking-tight text-gray-900 mb-2">
           {product.title}
         </h3>
-        <p className="font-bold text-xl text-gray-900 mb-4">${product.price}</p>
+        <p className="font-bold text-xl text-gray-900 mb-2">${product.price}</p>
 
-        <div className="flex items-center gap-1 mb-5 text-[#0856AA]">
+        <div className="flex items-center gap-1 mb-2 text-[#0856AA]">
           {Array.from({ length: fullStars }).map((_, i) => (
             <Star key={`full-${i}`} className="w-4 h-4 fill-current" />
           ))}
@@ -87,11 +87,11 @@ function DetailedProductCard({ product }: { product: Product }) {
           ))}
         </div>
 
-        <p className="text-gray-700 text-[15px] leading-relaxed mb-6 max-w-sm">
+        <p className="text-gray-700 text-[15px] leading-relaxed mb-3 max-w-sm">
           {product.description}
         </p>
 
-        <div className="mb-6 space-y-1">
+        <div className="mb-3 space-y-1">
           <p className="text-[15px] font-medium text-gray-900">Category</p>
           <p className="text-[15px] text-gray-600">{product.category}</p>
         </div>

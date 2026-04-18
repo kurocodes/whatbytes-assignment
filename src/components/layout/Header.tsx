@@ -2,7 +2,7 @@ import { Search, ShoppingCart } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="w-full h-16 bg-[#0656A5] flex items-center justify-between px-8">
+    <header className="sticky top-0 z-50 w-full h-16 bg-[#0656A5] flex items-center justify-between px-8 border-b border-[#043e78]/30">
       {/* Logo */}
       <div>
         <span className="text-2xl text-white font-semibold">Logo</span>

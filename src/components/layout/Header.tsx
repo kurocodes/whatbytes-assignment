@@ -11,7 +11,7 @@ export default function Header() {
       {/* Right Section */}
       <div className="flex items-center gap-4">
         {/* Search */}
-        <div className="flex items-center h-10 w-64 px-3 rounded-md outline-1 outline-white focus-within:outline-2">
+        <div className="flex items-center h-10 w-64 px-3 rounded-md outline-2 outline-white/30 focus-within:outline-white/50">
           <Search className="text-white/70 mr-2" />
 
           <input

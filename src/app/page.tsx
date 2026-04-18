@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <div>Hello</div>
+    <div className="w-full h-screen"></div>
   );
 }

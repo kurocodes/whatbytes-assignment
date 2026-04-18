@@ -1,9 +1,14 @@
 import Sidebar from "@/components/filters/Sidebar";
 import ProductGrid from "@/components/product/ProductGrid";
 
-export default function Home() {
+export default async function Home(props: {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const searchParams = await props.searchParams;
+  const q = searchParams?.q as string | undefined;
+
   return (
-    <main className="flex flex-col lg:flex-row gap-8 px-4 sm:px-8 py-8 max-w-[1400px] mx-auto">
+    <main className="flex flex-col lg:flex-row gap-8 px-4 sm:px-8 py-8 max-w-[1080px] mx-auto w-full">
       {/* Sidebar */}
       <aside className="w-full lg:w-[280px] shrink-0">
         <Sidebar />
@@ -14,7 +19,7 @@ export default function Home() {
         <h1 className="text-[28px] font-bold text-[#142642] mb-6">
           Product Listing
         </h1>
-        <ProductGrid />
+        <ProductGrid searchQuery={q} />
       </section>
     </main>
   );

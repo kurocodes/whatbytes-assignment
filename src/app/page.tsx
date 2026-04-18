@@ -3,9 +3,9 @@ import ProductGrid from "@/components/product/ProductGrid";
 
 export default function Home() {
   return (
-    <main className="flex gap-8 px-8 py-8 max-w-[1400px] mx-auto">
+    <main className="flex flex-col lg:flex-row gap-8 px-4 sm:px-8 py-8 max-w-[1400px] mx-auto">
       {/* Sidebar */}
-      <aside className="w-[280px] shrink-0">
+      <aside className="w-full lg:w-[280px] shrink-0">
         <Sidebar />
       </aside>
 

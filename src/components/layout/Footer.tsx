@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#051C3A] px-8 pt-16 pb-12 mt-12 border-t border-white/5">
+    <footer className="w-full bg-[#051C3A] px-4 sm:px-8 pt-12 sm:pt-16 pb-8 sm:pb-12 mt-12 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
         
         {/* Filters Column */}

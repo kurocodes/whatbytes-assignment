@@ -1,3 +1,4 @@
+import AddToCartButton from "@/components/product/AddToCartButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, StarHalf } from "lucide-react";
@@ -36,9 +37,10 @@ function NormalProductCard({ product }: { product: Product }) {
         <p className="font-bold text-[16px] text-gray-900 mb-4">
           ${product.price}
         </p>
-        <button className="mt-auto w-full bg-[#0856AA] text-[15px] text-white py-2.5 rounded-lg font-medium hover:bg-[#074b94] transition-colors active:scale-[0.98]">
-          Add to Cart
-        </button>
+        <AddToCartButton
+          product={product}
+          className="mt-auto w-full rounded-lg bg-[#0856AA] py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-[#074b94] active:scale-[0.98]"
+        />
       </div>
     </div>
   );
@@ -55,7 +57,7 @@ function DetailedProductCard({ product }: { product: Product }) {
         href={`/product/${product.id}`}
         className="relative w-full md:w-[45%] flex items-center justify-center shrink-0"
       >
-        <div className="relative w-full h-full min-h-[200px] md:min-h-[250px] group-hover:scale-[1.03] transition-transform duration-300">
+        <div className="relative w-full h-full min-h-50 md:min-h-62.5 group-hover:scale-[1.03] transition-transform duration-300">
           <Image
             src={product.image}
             alt={product.title}
@@ -96,9 +98,10 @@ function DetailedProductCard({ product }: { product: Product }) {
           <p className="text-[15px] text-gray-600">{product.category}</p>
         </div>
 
-        <button className="bg-[#0856AA] text-white text-[15px] py-3.5 px-6 rounded-lg font-medium hover:bg-[#074b94] transition-colors mt-auto w-full md:w-auto md:min-w-[200px] active:scale-[0.98]">
-          Add to Cart
-        </button>
+        <AddToCartButton
+          product={product}
+          className="mt-auto w-full rounded-lg bg-[#0856AA] px-6 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#074b94] active:scale-[0.98] md:w-auto md:min-w-50"
+        />
       </div>
     </div>
   );

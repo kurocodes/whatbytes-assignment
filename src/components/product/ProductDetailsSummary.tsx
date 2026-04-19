@@ -55,7 +55,7 @@ export default function ProductDetailsSummary({
       </div>
 
       <div className="mt-8">
-        <ProductDetailsActions />
+        <ProductDetailsActions product={product} />
       </div>
 
       <div className="mt-8 grid gap-4 rounded-2xl border border-[#E5EEF8] p-5 sm:grid-cols-2">

@@ -1,9 +1,15 @@
 "use client";
 
-import { Minus, Plus, ShoppingCart } from "lucide-react";
+import AddToCartButton from "@/components/product/AddToCartButton";
+import type { Product } from "@/lib/types";
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-export default function ProductDetailsActions() {
+export default function ProductDetailsActions({
+  product,
+}: {
+  product: Product;
+}) {
   const [quantity, setQuantity] = useState(1);
 
   function decreaseQuantity() {
@@ -42,13 +48,12 @@ export default function ProductDetailsActions() {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0856AA] px-6 py-4 text-base font-semibold text-white transition hover:bg-[#074b94] active:scale-[0.99] sm:w-auto sm:min-w-[220px]"
-      >
-        <ShoppingCart className="h-5 w-5" />
-        Add to Cart
-      </button>
+      <AddToCartButton
+        product={product}
+        quantity={quantity}
+        showIcon
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0856AA] px-6 py-4 text-base font-semibold text-white transition hover:bg-[#074b94] active:scale-[0.99] sm:w-auto sm:min-w-55"
+      />
     </div>
   );
 }

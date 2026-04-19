@@ -9,3 +9,7 @@ export type Product = {
   reviews: number;
   featured: boolean;
 };
+
+export type CartItem = Product & {
+  quantity: number;
+};

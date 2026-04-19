@@ -5,37 +5,32 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Suspense, useState, useEffect } from "react";
 
 function SearchInput() {
-  const [mounted, setMounted] = useState(false);
-
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
-  const queryParam = searchParams.get("q")?.toString() || "";
-  const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const queryParam = searchParams.get("q") || "";
 
-  useEffect(() => {
-    setSearchTerm(queryParam);
-  }, [queryParam]);
+  // Initialize directly from URL (no effect needed)
+  const [searchTerm, setSearchTerm] = useState(queryParam);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (searchTerm !== queryParam && mounted) {
+      if (searchTerm !== queryParam) {
         const params = new URLSearchParams(searchParams.toString());
+
         if (searchTerm) {
           params.set("q", searchTerm);
         } else {
           params.delete("q");
         }
+
         replace(`${pathname}?${params.toString()}`, { scroll: false });
       }
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [searchTerm, pathname, replace, searchParams, queryParam, mounted]);
+  }, [searchTerm, queryParam, pathname, replace, searchParams]);
 
   return (
     <div className="flex items-center h-10 w-36 sm:w-64 px-3 rounded-md outline-2 outline-white/30 focus-within:outline-white/50 border border-white/10 shadow-sm transition-all relative">
@@ -47,6 +42,7 @@ function SearchInput() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+
       <input
         className="bg-transparent outline-none text-white w-full text-sm sm:hidden placeholder:text-white/70"
         placeholder="Search..."

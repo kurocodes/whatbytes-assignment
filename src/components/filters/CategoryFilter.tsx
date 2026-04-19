@@ -1,10 +1,10 @@
-"use client";
-
-import { useState } from "react";
-
-export default function CategoryFilter() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
+export default function CategoryFilter({
+  selectedCategory,
+  onCategoryChange,
+}: {
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+}) {
   return (
     <div>
       <p className="mb-3 font-medium">Category</p>
@@ -12,32 +12,32 @@ export default function CategoryFilter() {
         <FilterOption
           label="All"
           checked={selectedCategory === "All"}
-          onChange={() => setSelectedCategory("All")}
+          onChange={() => onCategoryChange("All")}
         />
         <FilterOption
           label="Electronics"
           checked={selectedCategory === "Electronics"}
-          onChange={() => setSelectedCategory("Electronics")}
+          onChange={() => onCategoryChange("Electronics")}
         />
         <FilterOption
           label="Clothing"
           checked={selectedCategory === "Clothing"}
-          onChange={() => setSelectedCategory("Clothing")}
+          onChange={() => onCategoryChange("Clothing")}
         />
         <FilterOption
           label="Home"
           checked={selectedCategory === "Home"}
-          onChange={() => setSelectedCategory("Home")}
+          onChange={() => onCategoryChange("Home")}
         />
         <FilterOption
           label="Footwear"
           checked={selectedCategory === "Footwear"}
-          onChange={() => setSelectedCategory("Footwear")}
+          onChange={() => onCategoryChange("Footwear")}
         />
         <FilterOption
           label="Accessories"
           checked={selectedCategory === "Accessories"}
-          onChange={() => setSelectedCategory("Accessories")}
+          onChange={() => onCategoryChange("Accessories")}
         />
       </div>
     </div>

@@ -2,13 +2,9 @@
 
 A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, implementing product listing, filtering, cart management, and dynamic routing.
 
----
-
 ## 🚀 Live Demo
 
-🔗 **Live URL:** 
-
----
+🔗 **Live URL:** https://whatbytes-assignment-seven-chi.vercel.app/
 
 ## 📌 Features
 
@@ -28,8 +24,6 @@ A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, im
   * Rating ⭐
   * Add to Cart button
 
----
-
 ### 🔍 Filtering & Search
 
 * Combined filtering:
@@ -43,16 +37,12 @@ A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, im
   ```
 * Dynamic state syncing with UI
 
----
-
 ### 🛒 Cart System
 
 * Add / Remove products
 * Quantity management
 * Persistent cart using **localStorage**
 * Cart badge in header
-
----
 
 ### 📦 Product Detail Page
 
@@ -67,16 +57,12 @@ A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, im
   * Category
 * Add to Cart functionality
 
----
-
 ### 🎨 UI & UX
 
 * Fully responsive design
 * Clean and reusable components
 * Hover effects & interactive UI
 * Empty state handling (No products found)
-
----
 
 ## 🧠 Tech Stack
 
@@ -85,8 +71,6 @@ A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, im
 * **Styling:** Tailwind CSS
 * **State Management:** React Context API
 * **Icons:** Lucide React
-
----
 
 ## 📂 Project Structure
 
@@ -105,8 +89,6 @@ A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, im
 /context
 /hooks
 ```
-
----
 
 ## ⚙️ Setup Instructions
 
@@ -134,8 +116,6 @@ npm run dev
 http://localhost:3000
 ```
 
----
-
 ## 🧩 Implementation Highlights
 
 * Feature-based commits followed as instructed
@@ -143,8 +123,6 @@ http://localhost:3000
 * Reusable component architecture
 * Clean separation of UI and logic
 * LocalStorage-based persistence for cart
-
----
 
 ## 📜 Assignment Requirements Covered
 
@@ -154,8 +132,6 @@ http://localhost:3000
 * Responsive UI matching provided design
 * Deployment on Vercel
 
----
-
 ## ✨ Future Improvements
 
 * Add authentication system
@@ -164,7 +140,6 @@ http://localhost:3000
 * Advanced sorting (price, popularity)
 * Pagination or infinite scroll
 
----
 
 ## 🙌 Acknowledgement
 

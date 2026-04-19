@@ -1,36 +1,171 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ WhatBytes Frontend Assignment
 
-## Getting Started
+A fully functional e-commerce frontend built with **Next.js + Tailwind CSS**, implementing product listing, filtering, cart management, and dynamic routing.
 
-First, run the development server:
+---
+
+## 🚀 Live Demo
+
+🔗 **Live URL:** 
+
+---
+
+## 📌 Features
+
+### 🏠 Home Page
+
+* Responsive product grid (desktop/tablet/mobile)
+* Sidebar filters:
+
+  * Category filtering
+  * Price range filtering
+* Search functionality (real-time filtering)
+* Product cards with:
+
+  * Image
+  * Title
+  * Price
+  * Rating ⭐
+  * Add to Cart button
+
+---
+
+### 🔍 Filtering & Search
+
+* Combined filtering:
+
+  * Search + Category + Price
+* URL-based filters
+  Example:
+
+  ```
+  ?category=electronics&price=0-1000
+  ```
+* Dynamic state syncing with UI
+
+---
+
+### 🛒 Cart System
+
+* Add / Remove products
+* Quantity management
+* Persistent cart using **localStorage**
+* Cart badge in header
+
+---
+
+### 📦 Product Detail Page
+
+* Dynamic routing using Next.js
+  `/product/[id]`
+* Product details:
+
+  * Image
+  * Title
+  * Price
+  * Description
+  * Category
+* Add to Cart functionality
+
+---
+
+### 🎨 UI & UX
+
+* Fully responsive design
+* Clean and reusable components
+* Hover effects & interactive UI
+* Empty state handling (No products found)
+
+---
+
+## 🧠 Tech Stack
+
+* **Framework:** Next.js (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **State Management:** React Context API
+* **Icons:** Lucide React
+
+---
+
+## 📂 Project Structure
+
+```
+/app
+  /cart
+  /product
+    /[productId]
+/components
+  /cart
+  /filters
+  /layout
+  /product
+  /filters
+/lib
+/context
+/hooks
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kurocodes/whatbytes-assignment.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧩 Implementation Highlights
 
-To learn more about Next.js, take a look at the following resources:
+* Feature-based commits followed as instructed
+* URL-driven filtering system
+* Reusable component architecture
+* Clean separation of UI and logic
+* LocalStorage-based persistence for cart
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 Assignment Requirements Covered
 
-## Deploy on Vercel
+* Product listing page with filters and search
+* Product detail page with dynamic routing
+* Cart functionality with persistent state
+* Responsive UI matching provided design
+* Deployment on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ✨ Future Improvements
+
+* Add authentication system
+* Backend integration (real API)
+* Wishlist feature
+* Advanced sorting (price, popularity)
+* Pagination or infinite scroll
+
+---
+
+## 🙌 Acknowledgement
+
+This project was built as part of the **WhatBytes Frontend Assignment**.

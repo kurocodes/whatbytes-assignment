@@ -1,17 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Star, StarHalf } from "lucide-react";
-
-type Product = {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  description: string;
-  category: string;
-  rating: number;
-  reviews: number;
-  featured: boolean;
-};
+import type { Product } from "@/lib/types";
 
 export default function ProductCard({ product }: { product: Product }) {
   if (product.featured) {
@@ -22,9 +12,12 @@ export default function ProductCard({ product }: { product: Product }) {
 
 function NormalProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-white rounded-xl p-5 flex flex-col shadow-sm border border-gray-100 col-span-1">
-      <div className="relative w-full aspect-square mb-4 flex items-center justify-center">
-        <div className="relative w-full h-full">
+    <div className="bg-white rounded-xl p-5 flex flex-col shadow-sm border border-gray-100 col-span-1 group">
+      <Link
+        href={`/product/${product.id}`}
+        className="relative w-full aspect-square mb-4 flex items-center justify-center"
+      >
+        <div className="relative w-full h-full group-hover:scale-[1.03] transition-transform duration-300">
           <Image
             src={product.image}
             alt={product.title}
@@ -33,11 +26,13 @@ function NormalProductCard({ product }: { product: Product }) {
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
-      </div>
+      </Link>
       <div className="flex flex-col grow mt-2">
-        <h3 className="font-medium text-[16px] text-gray-900 leading-snug mb-1">
-          {product.title}
-        </h3>
+        <Link href={`/product/${product.id}`}>
+          <h3 className="font-medium text-[16px] text-gray-900 leading-snug mb-1 hover:text-[#0856AA] transition-colors">
+            {product.title}
+          </h3>
+        </Link>
         <p className="font-bold text-[16px] text-gray-900 mb-4">
           ${product.price}
         </p>
@@ -55,9 +50,12 @@ function DetailedProductCard({ product }: { product: Product }) {
   const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0));
 
   return (
-    <div className="bg-white rounded-xl p-6 md:p-5 flex flex-col md:flex-row gap-8 shadow-sm border border-gray-100 md:col-span-2">
-      <div className="relative w-full md:w-[45%] flex items-center justify-center shrink-0">
-        <div className="relative w-full h-full min-h-[200px] md:min-h-[250px]">
+    <div className="bg-white rounded-xl p-6 md:p-5 flex flex-col md:flex-row gap-8 shadow-sm border border-gray-100 md:col-span-2 group">
+      <Link
+        href={`/product/${product.id}`}
+        className="relative w-full md:w-[45%] flex items-center justify-center shrink-0"
+      >
+        <div className="relative w-full h-full min-h-[200px] md:min-h-[250px] group-hover:scale-[1.03] transition-transform duration-300">
           <Image
             src={product.image}
             alt={product.title}
@@ -67,12 +65,14 @@ function DetailedProductCard({ product }: { product: Product }) {
             priority
           />
         </div>
-      </div>
+      </Link>
 
       <div className="flex flex-col justify-center grow">
-        <h3 className="font-bold text-[28px] tracking-tight text-gray-900 mb-2">
-          {product.title}
-        </h3>
+        <Link href={`/product/${product.id}`}>
+          <h3 className="font-bold text-[28px] tracking-tight text-gray-900 mb-2 hover:text-[#0856AA] transition-colors">
+            {product.title}
+          </h3>
+        </Link>
         <p className="font-bold text-xl text-gray-900 mb-2">${product.price}</p>
 
         <div className="flex items-center gap-1 mb-2 text-[#0856AA]">

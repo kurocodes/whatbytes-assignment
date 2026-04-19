@@ -29,7 +29,7 @@ export default function AddToCartButton({
   }
 
   return (
-    <button type="button" onClick={handleAddToCart} className={className}>
+    <button type="button" onClick={handleAddToCart} className={`${className} cursor-pointer`}>
       {showIcon ? <ShoppingCart className="h-5 w-5" /> : null}
       {justAdded ? "Added to Cart" : "Add to Cart"}
     </button>

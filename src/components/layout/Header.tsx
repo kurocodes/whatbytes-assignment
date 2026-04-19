@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Suspense, useState, useEffect } from "react";
 import { useCart } from "@/context/CartContext";
+import { useIsClient } from "@/hooks/useIsClient";
+
 
 function SearchInput() {
   const searchParams = useSearchParams();
@@ -57,6 +59,7 @@ function SearchInput() {
 
 export default function Header() {
   const { itemCount } = useCart();
+   const isClient = useIsClient();
 
   return (
     <header className="sticky top-0 z-50 w-full h-16 bg-[#0656A5] flex items-center justify-between px-4 sm:px-8 border-b border-[#043e78]/30">
@@ -87,7 +90,7 @@ export default function Header() {
         >
           <ShoppingCart size={18} />
           <span className="hidden sm:inline text-sm font-medium">Cart</span>
-          {itemCount > 0 ? (
+          {isClient && itemCount > 0 ? (
             <span className="absolute -right-2 -top-2 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-[#FFD166] px-1.5 text-[11px] font-bold text-[#142642]">
               {itemCount}
             </span>

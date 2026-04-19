@@ -5,12 +5,18 @@ import CartItemsList from "@/components/cart/CartItemsList";
 import CartPageHeader from "@/components/cart/CartPageHeader";
 import CartSummaryCard from "@/components/cart/CartSummaryCard";
 import { useCart } from "@/context/CartContext";
+import { useIsClient } from "@/hooks/useIsClient";
 
 export default function CartPageContent() {
   const { cartItems, subtotal, itemCount, updateQuantity, removeFromCart } =
     useCart();
   const shipping = cartItems.length > 0 ? 15 : 0;
   const total = subtotal + shipping;
+  const isClient = useIsClient();
+
+  if (!isClient) {
+    return null;
+  }
 
   if (cartItems.length === 0) {
     return <CartEmptyState />;
